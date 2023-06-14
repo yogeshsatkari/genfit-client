@@ -9,7 +9,7 @@ function App() {
   const [UserProfiles, setUserProfiles] = useState([])
   useEffect(() => {
     async function getUserProfiles() {
-      const response = await Axios.get('http://localhost:3001/user-profile')
+      const response = await Axios.get(`${process.env['REACT_APP_BASE_URL']}/user-profile`)
       console.log('user-profile response : ', response)
       setUserProfiles(response.data)
     }
